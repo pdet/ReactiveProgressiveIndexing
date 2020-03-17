@@ -1,0 +1,16 @@
+  
+name: Ubuntu
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+    - uses: actions/checkout@v1
+    - run: |
+        cmake -DCMAKE_BUILD_TYPE=Debug && make
+        test/PUTest
